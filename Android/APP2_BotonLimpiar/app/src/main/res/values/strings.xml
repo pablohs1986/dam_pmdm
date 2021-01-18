@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">APP2_BotonLimpiar</string>
+    <string name="nombre">Introduce tu nombre:</string>
+    <string name="tuNombre">tuNombre</string>
+    <string name="limpiar">Limpiar</string>
+
+</resources>
