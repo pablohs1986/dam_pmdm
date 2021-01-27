@@ -1,0 +1,27 @@
+<div class="container-fluid mt-5" style="text-align:center">
+  
+  <h1>
+    {{ title }}!
+  </h1>
+
+  <div class="mt-5">
+    <svg width=450 height=50>
+      <rect x=0 y=0 width=50 height=50 stroke="#000000" stroke-width=2 fill="#50fa7b" (mouseover)="cambiarFondoBody($event.target)" (mouseout)="devolverColorOriginalBody($event.target)"/>
+      <rect x=100 y=0 width=50 height=50 stroke="#000000" stroke-width=2 fill="#ff5555" (mouseover)="cambiarFondoBody($event.target)" (mouseout)="devolverColorOriginalBody($event.target)"/>
+      <rect x=200 y=0 width=50 height=50 stroke="#000000" stroke-width=2 fill="#f1fa8c" (mouseover)="cambiarFondoBody($event.target)" (mouseout)="devolverColorOriginalBody($event.target)"/>
+      <rect x=300 y=0 width=50 height=50 stroke="#000000" stroke-width=2 fill="#8be9fd" (mouseover)="cambiarFondoBody($event.target)" (mouseout)="devolverColorOriginalBody($event.target)"/>
+      <rect x=400 y=0 width=50 height=50 stroke="#000000" stroke-width=2 fill="#ffb86c" (mouseover)="cambiarFondoBody($event.target)" (mouseout)="devolverColorOriginalBody($event.target)"/>
+    </svg>
+  </div>
+  
+  <div class="row mt-5">
+    <div class="col-6">
+      <label for="colorPicker">Selecciona un color:&nbsp;</label>      
+      <input #colorPicker id="colorPicker" name="color" type="color" [value]="colorSeleccionado" (input)="cambiarFondoSeleccion(colorPicker.value)"> <!-- #colorPicker asocia una variable al elemento -->
+    </div>
+    <div class="col-6">
+      <label id="seleccion" #resultado [ngStyle]={background:colorSeleccionado}>{{colorSeleccionado}}</label> <!-- Asigna un estilo mediante directiva -->
+    </div>
+  </div>
+
+</div>
