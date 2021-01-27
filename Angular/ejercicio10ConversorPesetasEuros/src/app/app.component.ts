@@ -17,7 +17,7 @@ export class AppComponent {
   convertirPesetasAEuros(pesetas: HTMLInputElement) {
     if(isNaN(Number(pesetas.value))) {
       alert('Pesetas debe ser un número.');
-      return false; // Evitan que recargue la página
+      return false; // Evitan que recargue la página tras hacer click
 
     } else {
       this.resultadoEuros = (Number(pesetas.value) / this.pesetasQueValeUnEuro).toFixed(2);
