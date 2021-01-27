@@ -1,0 +1,22 @@
+<div class="container mt-5" style="text-align:center">
+  <h1>Conversor de pesetas y euros</h1>
+
+  <form class="form-inline mt-5">
+    <div class="form-group">
+      <label class="mr-3" for="entradaPesetas">Pesetas</label>
+      <input class="mr-5" type="text" name="entradaPesetas" #entradaPesetas placeholder="Introduce pesetas" (click)="entradaPesetas.value = ''; resultadoEuros=null"> <!-- Al hacer click en este campo, se resetea y resetea el resultado-->
+      <button class="btn btn-primary pl-5 pr-5 mr-5"id="botonConvertir" (click)="convertirPesetasAEuros(entradaPesetas)">Convertir a euros</button>
+      <label class="mr-3" for="salidaEuros">Euros</label>
+      <input class="mr-3" type="text" name="salidaEuros" placeholder="En euros son..." [value]=resultadoEuros>
+    </div>
+    <hr class="col-12">
+    <div class="form-group">
+      <label class="mr-3" for="entradaEuros">Euros</label>
+      <input class="mr-5" type="text" name="entradaEuros" #entradaEuros placeholder="Introduce euros" (click)="entradaEuros.value = ''; resultadoPesetas=null">
+      <button class="btn btn-primary pl-5 pr-5 mr-5"id="botonConvertir" (click)="convertirEurosAPesetas(entradaEuros)">Convertir a pesetas</button>
+      <label class="mr-3" for="salidaPesetas">Pesetas</label>
+      <input class="mr-3" type="text" name="salidaPesetas" placeholder="En pesetas son..." [value]=resultadoPesetas>
+    </div>
+  </form>
+
+</div>
