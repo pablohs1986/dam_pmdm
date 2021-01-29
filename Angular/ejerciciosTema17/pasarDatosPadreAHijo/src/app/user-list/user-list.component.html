@@ -1,0 +1,6 @@
+<h2> {{titulo}} </h2>
+<ul>
+    <li *ngFor="let usuario of usuarios">
+        <app-user-item [user]="usuario"></app-user-item> <!-- Paso el valor de un usuario a la propiedad user en el componente hijo-->
+    </li>
+</ul>
