@@ -4,11 +4,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { ListaTareasComponent } from './lista-tareas/lista-tareas.component';
+import { TaskDetailsComponent } from './task-details/task-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListaTareasComponent
+    ListaTareasComponent,
+    TaskDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,5 @@
+<ul>
+    <li class="pl-3 pr-3" *ngFor="let tarea of tasks" [class.pending]="tarea.pending"> <!-- Usando el class binding -->
+        <app-task-details [tarea]="tarea" (borrar)="borrarTarea($event)"></app-task-details> 
+    </li> 
+</ul>

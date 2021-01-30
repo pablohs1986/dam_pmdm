@@ -12,13 +12,18 @@ export class ListaTareasComponent implements OnInit {
 
   constructor() {
     this.tasks = [
-      { id: 1, title: 'Tarea 1', pending: false },
-      { id: 2, title: 'Tarea 2', pending: true },
-      { id: 3, title: 'Tarea 3', pending: false }
+      { id: 1, title: 'Ejercicios Angular', pending: false },
+      { id: 2, title: 'Actividad 2 SGE', pending: true },
+      { id: 3, title: 'Proyecto EIE', pending: false }
     ];
   }
 
   ngOnInit(): void {
   }
+
+  borrarTarea(tareaABorrar: Task) {
+    this.tasks.splice(this.tasks.findIndex(t => tareaABorrar.id === t.id), 1);
+  }
+   
 
 }

@@ -1,0 +1,8 @@
+<span>{{tarea.title}}</span>
+<a href="#" (click)="onBorrarTarea()">Borrar</a>
+
+<!-- AL hacer click, ejecuta onBorrarTarea() que emite un evento de tipo Task
+con la tarea que queremos emitir.
+
+Esta se recibe en la plantilla del padre desde (borrar)="borrarTarea($event)
+ejecutando el metodo borrarTarea() que recibe el evento-->

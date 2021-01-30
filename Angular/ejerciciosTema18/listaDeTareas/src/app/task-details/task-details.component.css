@@ -1,0 +1,9 @@
+a {
+    float: right;
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: white;
+}
