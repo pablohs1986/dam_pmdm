@@ -1,0 +1,7 @@
+.usuario {
+    display: inline-block;
+}
+
+ul {
+    list-style-position: inside;
+}

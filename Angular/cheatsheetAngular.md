@@ -19,6 +19,9 @@ ng g c <nombre-componente>
 ## Crear clase
 ng generate class <nombreClase>
 
+## Crear interface
+ng generate interface <nombreInterface>
+
 ## Actualizar Angular CLI local
 npm install --save-dev @angular/cli@latest
 

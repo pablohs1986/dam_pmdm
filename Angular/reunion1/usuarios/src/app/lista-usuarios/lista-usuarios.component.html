@@ -1,0 +1,9 @@
+<ul>
+    <li *ngFor = "let usuario of usuarios">
+        <app-user-item class="usuario" 
+        [usuario]="usuario"
+        (borrar)="borrarUsuario($event)"></app-user-item>
+        
+        <!-- <button (click)=(borrarUsuario(usuario))>Borrar</button> --> <!-- Opvión A -->
+    </li>
+</ul>
