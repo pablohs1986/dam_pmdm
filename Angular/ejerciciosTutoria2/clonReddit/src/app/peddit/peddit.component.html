@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="col-3 align-self-center votos">
+        <div class="marcador">
+            <div class="totalVotos">
+                {{articulo.votos}}
+            </div>
+            <div class="totalPuntos">
+                Puntos
+            </div>
+        </div>
+    </div>
+
+    <div class="col-9 infoPeddit">
+        <h1>
+            <a href="{{articulo.enlace}}">{{articulo.titulo}}</a>
+        </h1>
+        <div>{{articulo.mostrarDominio()}}</div>
+        <ul class="list-inline votaciones">
+            <li class="list-inline-item">
+                <h5>
+                    <a href (click)="votoArriba()">
+                        <span style="font-size: 42px;">&#11014;</span>
+                    </a>
+                </h5>
+            </li>
+            <li class="list-inline-item">
+                <h5>
+                    <a href (click)="votoAbajo()">
+                        <span style="font-size: 42px;">&#11015;</span>
+                    </a>
+                </h5>
+            </li>
+        </ul>
+    </div>
+</div>
+

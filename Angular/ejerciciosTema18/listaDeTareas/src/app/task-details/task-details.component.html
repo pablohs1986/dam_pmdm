@@ -1,5 +1,7 @@
-<span>{{tarea.title}}</span>
-<a href="#" (click)="onBorrarTarea()">Borrar</a>
+<li class="list-group-item">
+    <span>{{tarea.title}}</span>
+    <a href="#" (click)="onBorrarTarea()">Borrar</a>
+</li>
 
 <!-- AL hacer click, ejecuta onBorrarTarea() que emite un evento de tipo Task
 con la tarea que queremos emitir.

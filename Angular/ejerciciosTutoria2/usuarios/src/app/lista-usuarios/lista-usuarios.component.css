@@ -1,0 +1,9 @@
+/* para evitar que el botón de listado se muestre encima (el componente ocupa todo el ancho, de esta manera dejamos que deje espacio) */
+.usuario {
+    display: inline-block;
+}
+
+/* posición del punto */
+ul {
+    list-style-position: inside;
+}

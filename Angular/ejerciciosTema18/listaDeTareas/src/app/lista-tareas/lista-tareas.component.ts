@@ -8,15 +8,10 @@ import { Task } from '../dto/task';
 })
 export class ListaTareasComponent implements OnInit {
   // private 
-  tasks: Task[];
+  id = 0;
+  tasks: Task[] = [];
 
-  constructor() {
-    this.tasks = [
-      { id: 1, title: 'Ejercicios Angular', pending: false },
-      { id: 2, title: 'Actividad 2 SGE', pending: true },
-      { id: 3, title: 'Proyecto EIE', pending: false }
-    ];
-  }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -25,5 +20,9 @@ export class ListaTareasComponent implements OnInit {
     this.tasks.splice(this.tasks.findIndex(t => tareaABorrar.id === t.id), 1);
   }
    
+  aniadirTarea() {
+    let titulo: string = prompt('Por favor, introduce un título para la tarea:');
+    this.tasks.push({ id: this.id++, title: titulo, pending: true}) // Añade una nueva tarea
+  }
 
 }

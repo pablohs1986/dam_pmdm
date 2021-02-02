@@ -1,0 +1,12 @@
+<li class="list-group-item">
+    <span>{{tarea.titulo}}</span>
+    <a href="#" (click)="onBorrarTarea()">
+        <i class="fa fa-times-circle" style="margin-left: 5px; color:red; font-size: 1.5em"></i>
+    </a>
+</li>
+
+<!-- AL hacer click, ejecuta onBorrarTarea() que emite un evento de tipo Task
+con la tarea que queremos emitir.
+
+Esta se recibe en la plantilla del padre desde (borrar)="borrarTarea($event)
+ejecutando el metodo borrarTarea() que recibe el evento-->

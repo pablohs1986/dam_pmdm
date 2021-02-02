@@ -1,0 +1,18 @@
+<form>
+  <h3>Añadir un Peddit</h3>
+  <div class="form-group">
+    <label for="titulo">Título</label>
+    <input #titulo type="text" class="form-control" id="titulo"> <!-- Para sacar el valor de #titulo, habrá que usar titulo.value -->
+  </div>
+  <div class="form-group">
+    <label for="enlace">Enlace</label>
+    <input #enlace type="url" class="form-control" id="enlace">
+  </div>
+  <div class="row">
+    <button type="submit" class="btn btn-succes ml-auto" (click)="aniadirPeddit(titulo, enlace)">Añadir</button>
+  </div>
+</form>
+
+<div>
+  <app-peddit *ngFor="let articulo of ordenarPeddits()" [articulo]="articulo" class="row"></app-peddit> <!-- Itera sobre el array ordenado que deveulve ordenarPeddits -->
+</div>

@@ -1,5 +1,12 @@
-<ul>
-    <li class="pl-3 pr-3" *ngFor="let tarea of tasks" [class.pending]="tarea.pending"> <!-- Usando el class binding -->
-        <app-task-details [tarea]="tarea" (borrar)="borrarTarea($event)"></app-task-details> 
-    </li> 
+<nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Mis Tareas</a>
+    <a href="#" class="btn btn-primary navbar-btn" role="button"
+    (click)="aniadirTarea()">
+        <i class="fa fa-plus" style="margin-right: 5px"></i>
+        Añadir tarea
+    </a>
+</nav>
+
+<ul class="list-group">
+    <app-task-details *ngFor="let tarea of tasks" [tarea]="tarea" (borrar)="borrarTarea($event)"></app-task-details>
 </ul>

@@ -1,0 +1,12 @@
+<nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Mis Tareas</a>
+    <a href="#" class="btn btn-primary navbar-btn" role="button"
+    (click)="aniadirTarea()">
+        <i class="fa fa-plus" style="margin-right: 5px"></i>
+        Añadir tarea
+    </a>
+</nav>
+
+<ul class="list-group">
+    <app-detalle-tarea *ngFor="let tarea of tareas" [tarea]="tarea" (borrar)="borrarTarea($event)"></app-detalle-tarea>
+</ul>

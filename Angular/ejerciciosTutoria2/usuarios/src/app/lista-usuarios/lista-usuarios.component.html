@@ -1,0 +1,19 @@
+<!-- con ng-container -->
+<ul>
+    <ng-container *ngFor = "let usuario of usuarios">
+        <ng-container *ngIf = "usuario.trabaja">
+            <li >
+                <app-user-item class="usuario" [usuario]="usuario" (borrar)="borrarUsuario($event)"></app-user-item>
+                <!-- <button (click)=(borrarUsuario(usuario))>Borrar</button> --> <!-- Opvión A -->
+            </li>
+        </ng-container>
+    </ng-container>
+</ul>
+
+<!-- con hidden -->
+<ul>
+    <li *ngFor = "let usuario of usuarios" [hidden]="!usuario.trabaja">
+        <app-user-item class="usuario" [usuario]="usuario" (borrar)="borrarUsuario($event)"></app-user-item>
+        <!-- <button (click)=(borrarUsuario(usuario))>Borrar</button> --> <!-- Opvión A -->
+    </li>
+</ul>
