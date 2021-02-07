@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>¡Adivina el número!</h1>
+  
+  <div class="card card-block card-outline-primary text-center mt-3 mb-3">
+    <p>Adivina el número que ha pensado el ordenador entre 1 y 1000.</p>
+  </div>
+
+  <label for="numeroUsuario" class="mr-2">Tu número es: </label>
+  <input type="number" name="numeroUsuario" id="numeroUsuario" [(ngModel)]="numeroUsuario"> <!-- Hace falta el forms module -->
+  <button type="button" class="btn btn-primary m-2" (click)="comprobarNumero()">Verificar</button>
+  <button type="button" class="btn btn-warning m-2" (click)="iniciarJuego()">Reiniciar</button>
+
+  <div>
+    <p *ngIf="desviacion > 0" class="alert alert-warning">Tu número es menor, sigue intentándolo</p>
+    <p *ngIf="desviacion < 0" class="alert alert-warning">Tu número es mayor, sigue intentándolo</p>
+    <p *ngIf="desviacion === 0" class="alert alert-success">¡¡¡Enhorabuena, has hacertado!!!</p>
+  </div>
+
+  <p for="numeroIntentos">Nº de intentos:
+    <span class="badge badge-pill badge-info">{{contadorIntentos}}</span>
+  </p>
+</div>
