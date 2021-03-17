@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="column col-2 my-auto mx-auto p-0">
+            <img [src]="llamada.imageUrl" [ngStyle]="{width:'100%'}">
+            <div class="d-flex justify-content-center">
+                {{llamada.fechaIncidencia | date: 'dd/MM/yyyy'}}
+            </div>
+        </div>
+
+        <div class="column col-6">
+            <h5 class="row d-flex justify-content-between">
+                <div>{{llamada.codigoIncidencia}}</div>
+                <div>{{llamada.softwareIncidencia}}</div>
+            </h5>
+            <div>{{llamada.descripcion}}</div>
+            <div>
+                <i>Operador/a:</i>
+                <i>{{llamada.operadorAtendio}}</i>
+            </div>
+            <div>
+                <span *ngFor="let nombre of llamada.empresaDepartamentoProyecto; let i=index">
+                    <a href="#">{{nombre}}</a>
+                    <span>
+                        {{i < (llamada.empresaDepartamentoProyecto.length-1) ? '>' : ''}}
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="col-3 text-center justify-content-center my-auto" [ngClass]="getClass()">
+            {{llamada.estado}}
+        </div>
+    </div>
+    <hr>
+</div>

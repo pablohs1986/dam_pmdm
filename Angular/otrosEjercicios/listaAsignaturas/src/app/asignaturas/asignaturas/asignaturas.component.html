@@ -1,0 +1,13 @@
+<div class="container text-center p-5">
+    <app-item-asignatura
+    *ngFor="let miAsignatura of asignaturas"
+    [asignatura]="miAsignatura"
+    [routerLink]="['/asignaturas',miAsignatura.id]"
+    routerLinkActive="active"></app-item-asignatura>
+
+    <button class="btn btn-primary d-flex mx-auto my-3" width="100%"
+        routerLink="/addAsignatura"
+        routerLinkActive="active">Añadir</button>
+</div>
+
+

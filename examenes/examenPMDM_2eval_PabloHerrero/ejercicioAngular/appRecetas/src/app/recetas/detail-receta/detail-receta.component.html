@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-warning justify-content-left">
+    <h1 class="ml-3" (click)="volverAtras()">_Back</h1>
+</nav>
+
+<h2 class="text-center">Receta: {{recetaSeleccionada.nombre}}</h2>
+<div class="row mx-auto my-auto text-center">
+    <div class="col-6">
+        <img [src]="recetaSeleccionada.foto" [ngStyle]="{width:'25vh'}">
+    </div>
+    <div class="col-6">
+        <p>Personas</p>
+        <p>{{recetaSeleccionada.numeroPersonas}}</p>
+        <p>Tiempo cocinando</p>
+        <p>{{recetaSeleccionada.tiempoCocinando}}</p>
+        <p>Calorias por 100 grs</p>
+        <p>{{recetaSeleccionada.calorias}}</p>
+    </div>
+</div>
+
+<div class="row  mx-auto my-auto justify-content-center">
+    <h2 class="text-center">Ingredientes</h2>
+    <img class="pl-2" src="../../../assets/img/add.png" alt="addIngrediente" [ngStyle]="{width:'4vw'}">
+    
+    <ng-container *ngFor="let miReceta of recetaSeleccionada">
+        <ng-container *ngIf="miReceta.ingredientes.lenght() !== 0">
+            <div class="row text-center" *ngFor="let ingrediente of miReceta.ingredientes; let i = index">
+                <ul>
+                    <li>{{miReceta.cantidad}} {{ingrediente[i]}}</li>
+                </ul>
+            </div>
+            <button class="btn btn.primary">Duplicar Personas</button>
+        </ng-container>
+    
+        <ng-container *ngIf="miReceta.ingredientes.lenght() !== 0">
+            <h1 class="text-center">NO HAY INGREDIENTES</h1>
+        </ng-container>
+    </ng-container>
+</div>
+

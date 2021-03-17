@@ -1,0 +1,19 @@
+<nav class="navbar navbar-toggleable-md navbar-expand-lg navbar-light bg-faded navbar-inverse bg-primary">
+	<button class="navbar-toggler navbar-toggler-right" 
+			type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" 
+            aria-label="Toggle navigation"
+            (click)="toggleCollapse()">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<a class="navbar-brand" routerLink="/home">Ejemplo de Routing</a>
+	<div class="collapse navbar-collapse" id="navbarNavAltMarkup" [class.show]="show">
+		<div class="navbar-nav">
+			<a class="nav-item nav-link active" routerLink="/home" routerLinkActive="active">Home
+				<span class="sr-only">(current)</span>
+			</a>
+			<a class="nav-item nav-link" routerLink="/about" routerLinkActive="active">Acerca de nosotros</a>
+			<a class="nav-item nav-link" routerLink="/contact" routerLinkActive="active">Contacto</a>
+		</div>
+	</div>
+</nav>

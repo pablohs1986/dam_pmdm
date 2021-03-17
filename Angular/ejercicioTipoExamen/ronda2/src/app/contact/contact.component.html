@@ -1,0 +1,28 @@
+<form class="pl-5 pr-5 pt-2">
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input class="form-control" type="text" id="nombre" placeholder="Introduce tu nombre" [disabled]="enviando"> <!-- Deshabilita el campo si la expresion retorna true -->
+    </div>
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input class="form-control" type="email" id="email" placeholder="Introduce tu email" [disabled]="enviando">
+        <small>Nosotros nunca compartiremos tu email con nadie más.</small>
+    </div>
+    <div class="form-group">
+        <label for="mensaje">Mensaje:</label>
+        <textarea class="form-control" name="mensaje" id="mensaje" rows="5" [(ngModel)]="mensaje" [disabled]="enviando"></textarea>
+    </div>
+
+    <br>
+
+    <ng-container *ngIf="!enviando"> <!-- Si se ha enviado, desaparecen los botones -->
+        <div class="row justify-content-center">
+            <button class="btn btn-primary mr-3" (click)="enviarMensaje()">Enviar</button>
+            <button class="btn btn-primary" (click)="volverAtras()">Volver</button>
+        </div>
+    </ng-container>
+
+    <div *ngIf="detalles"> <!-- Si hay detalles, se muestran // Detalles = "enviando mensaje"-->
+        {{detalles}}
+    </div>
+</form>

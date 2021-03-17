@@ -1,0 +1,42 @@
+<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="descripcion" placeholder="Describe el problema">Descripción</label>
+            <input class="form-control" type="text" name="descripcion" id="descripcion"
+            [(ngModel)]="call.descripcion">
+        </div>
+        <div class="form-group">
+            <label for="software" placeholder="Software que provocó la incidencia">Software que provocó la incidencia</label>
+            <input class="form-control" type="text" name="software" id="software"
+            [(ngModel)]="call.softwareIncidencia">
+        </div>
+        <div class="form-group">
+            <label for="imgUrl" placeholder="Url de la captura de la incidencia">Url de la captura de la incidencia</label>
+            <input class="form-control" type="text" name="imgUrl" id="imgUrl"
+            [(ngModel)]="call.imgUrl">
+        </div>
+        <div class="form-group">
+            <label for="empDepProy" placeholder="Ej: Empresa, Contabilidad, Proyecto">
+                Empresa, Departamento y Proyecto donde se generó la incidencia</label>
+            <input class="form-control" type="text" name="empDepProy" id="empDepProy"
+            [(ngModel)]="call.empresaDptoProyecto">
+        </div>
+        <div class="form-group">
+            <label for="telefono" placeholder="Teléfono desde donde llamas">Teléfono desde donde llama</label>
+            <input class="form-control" type="text" name="telefono" id="telefono"
+            [(ngModel)]="call.telefonoOrigen">
+        </div>
+        <div class="form-group">
+            <label for="operador" placeholder="Operador que ha atendido">Operador que ha atendido</label>
+            <input class="form-control" type="text" name="operador" id="operador"
+            [(ngModel)]="call.operadorAtendio">
+        </div>
+        <div class="form-group">
+            <label for="fecha" placeholder="dd/mm/yyyy">Fecha de la incidencia</label>
+            <input class="form-control" type="date" name="fecha" id="fecha"
+            [(ngModel)]="call.fechaIncidencia">
+        </div>
+
+        <button class="btn btn-primary d-flex mx-auto my-3" (click)="addToEmptyCall()">Añadir</button>
+    </form>
+</div>

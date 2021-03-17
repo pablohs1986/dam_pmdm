@@ -1,0 +1,32 @@
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-3">
+            <div>
+                <img [src]="receta.foto" [ngStyle]="{width:'13vh'}">
+                <div>{{receta.nombre}}</div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div>
+                <div>{{receta.calorias}}</div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div>
+                <div>{{receta.tiempoCocinando}}</div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div>
+                <div>{{receta.votos}}</div>
+                <a>
+                    <span (click)="incrementarVoto(receta);$event.stopPropagation()" style="font-size: 42px;">&#11014;</span>
+                </a>
+                <a>
+                    <span (click)="disminuirVoto(receta);$event.stopPropagation()" style="font-size: 42px;">&#11014;</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>

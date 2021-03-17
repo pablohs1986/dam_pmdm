@@ -1,0 +1,12 @@
+<div class="container mt-2 ">
+    <div class="row">
+        <div class="col-4 mx-auto my-auto">
+            <div>{{tarea.id}}</div>
+            <div>{{tarea.titulo}}</div>
+            <div>{{tarea.descripcion}}</div>
+            <div>{{ tarea.realizada ? 'Realizada' : 'Pendiente' }}</div>
+        </div>
+    </div>
+    <button class="btn btn-primary" (click)="onBorrar()">Borrar</button>
+    <hr>
+</div>

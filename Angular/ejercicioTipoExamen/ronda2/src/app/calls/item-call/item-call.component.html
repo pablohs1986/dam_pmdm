@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+
+        <div class="col-2 my-auto mx-auto">
+            <div>
+                <img [src]="call.imgUrl" [ngStyle]="{'width': '100%'}"> <!-- ¿?¿?¿? -->
+            </div>
+            <div class="d-flex justify-content-center">
+                {{call.fechaIncidencia | date: 'dd/MM/yyyy'}}
+            </div>
+        </div>
+
+        <div class="col-6">
+            <h5 class="row d-flex justify-content-between">
+                <div>{{call.codIncidencia}}</div>
+                <div>{{call.softwareIncidencia}}</div>
+            </h5>
+            <div>{{call.descripcion}}</div>
+            <div>
+                <i>Operador/a:</i>
+                <i>{{call.operadorAtendio}}</i>
+            </div>
+            <div>
+                <span *ngFor="let name of call.empresaDptoProyecto; let i=index"> <!-- ¿?repasa?¿? -->
+                    <a href="#">{{name}}</a>
+                    <span>
+                        {{i < (call.empresaDptoProyecto.length-1) ? '>' : ''}}
+                    </span>
+                </span>
+            </div>
+        </div>
+
+        <div class="col-3 text-center justify-content-center my-auto"
+            [ngClass]="getClass()"> <!-- Asigna la clase del switch de la función -->
+            {{call.estado}}
+        </div>
+
+    </div>
+</div>
+<hr>

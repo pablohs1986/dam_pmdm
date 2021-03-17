@@ -1,0 +1,10 @@
+<app-navbar-calls></app-navbar-calls>
+<app-item-call 
+    *ngFor="let miLlamada of calls"
+    [call]="miLlamada"
+    [routerLink]="['/calls', miLlamada.codIncidencia]"
+    routerLinkActive="active"></app-item-call>
+
+    <!-- Pasa la llamada a la propiedad call en el hijo (property binding)-->
+    <!-- Pasa la ruta de llamadas y le añade el código de la incidencia -->
+    <!-- Ojo-> El routerlinkactive mal peusto es lo que hacía que no cargara el array de llamadas -->

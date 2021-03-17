@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <span><strong>{{asignatura.id}}</strong>-</span>
+            <span><strong>{{asignatura.titulo}}</strong></span>
+            <br>
+            <span>Profesor: {{asignatura.profesor}}</span>
+            <br>
+            <span>Descripción: {{asignatura.descripcion}}</span>
+        </div>
+        <div class="col-6 mx-auto my-auto">
+            <span [ngClass]="getClass()">{{asignatura.aprobada ? "Aprobada" : "Suspendida"}}</span>
+        </div>
+    </div>
+    <hr>
+</div>

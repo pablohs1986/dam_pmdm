@@ -1,0 +1,1 @@
+const constante = "Este dato no puede cambiar";

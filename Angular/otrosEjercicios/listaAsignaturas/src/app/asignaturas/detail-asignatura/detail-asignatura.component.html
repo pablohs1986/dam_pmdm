@@ -1,0 +1,10 @@
+<div class="container p-5">
+    <div class="text-center">
+        <h3>{{asignaturaSeleccionada.titulo}}</h3>
+        <p>{{asignaturaSeleccionada.descripcion}}</p>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary" (click)="aprobarAsignatura(asignaturaSeleccionada.id)">Aprobar</button>
+        <button class="btn btn-danger ml-3" (click)="onBorrar()">Mandar a paseo</button>
+    </div>
+</div>

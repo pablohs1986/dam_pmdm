@@ -1,0 +1,17 @@
+<div class="container p-5">
+    <form>
+        <div class="form-group">
+            <label for="titulo">Título:</label>
+            <input class="form-control" placeholder="Introduce el nombre de la asignatura" id="titulo" name="titulo" type="text" [(ngModel)]="nuevaAsignatura.titulo">
+        </div>
+        <div class="form-group">
+            <label for="profesor">Profesor:</label>
+            <input class="form-control" placeholder="Introduce el profesor que imparte la asignatura." id="profesor" name="profesor" type="text"  [(ngModel)]="nuevaAsignatura.profesor">
+        </div>
+        <div class="form-group">
+            <label for="descripcion">Descripción:</label>
+            <textarea name="descripcion" id="descripcion" placeholder="Introduce una descripción." rows="10" style="min-width: 100%" [(ngModel)]="nuevaAsignatura.descripcion"></textarea>
+        </div>
+        <button class="btn btn-primary d-flex mx-auto my-3" (click)="aniadirAsignatura()">Añadir</button>
+    </form>
+</div>

@@ -1,0 +1,32 @@
+<h2> {{titulo}} </h2>
+<button (click)="cambiarAModoAniadir()">Añadir</button>
+<button (click)="cambiarAModoVerUser()">Ver user por id</button>
+
+<ul>
+    <li *ngFor="let usuario of usuarios">
+        <app-user-item [user]="usuario"></app-user-item> <!-- Paso el valor de un usuario a la propiedad user en el componente hijo-->
+        <button type="button" class="btn btn-warning" (click)="borrarUsuario(usuario)">Borrar</button>
+    </li>
+</ul>
+
+<div *ngIf="isModoAniadir">
+    <hr>
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" #nombre>
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" #edad>
+        <label for="trabaja">Trabaja:</label>
+        <select #trabaja>                       <!-- Ojo --> 
+            <option value="true">Sí</option>
+            <option value="false">No</option>
+        </select>
+        <button type="button" (click)="aniadirNuevoUser(nombre.value, edad.value, trabaja.value)">Guardar</button> <!-- Hacerlo del tipo button para que no recargue. No usar submit-->
+    </form>
+</div>
+
+<div *ngIf="isModoVerUser">
+    <label for="id">Id del usuario a mostrar:</label>
+    <input type="number" #id id="id">
+    <button type="button" (click)="getUserById(id.value)">Ver usuario</button>
+</div>

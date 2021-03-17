@@ -1,0 +1,21 @@
+<div class="container pt-5">
+  <label for="inputColor">Color </label>
+  <input type="text" id="inputColor" [(ngModel)]="colorSeleccionado"> <!-- El input queda asociado a la propiedad. Pasa el valor que se meta a colorSeleccionado en el modelo de datos -->
+  <button [ngClass]="{
+    'btn': true, 
+    'btn-primary': colorSeleccionado==='blue',
+    'btn-warning': colorSeleccionado==='orange',
+    'btn-success': colorSeleccionado==='green',
+    'miClase': colorSeleccionado==='blue'}" 
+    [class.miClase]="colorSeleccionado==='pink'" (click)="generarColorAleatorio()">Generar color aleatorio</button>
+  <!-- Ojo con esto! -->
+  <div [ngStyle] ="{
+    'background-color': colorSeleccionado,
+    'width': '100px',
+    'height': '100px',
+    'margin-top': '10px'
+  }"></div>
+</div>
+
+<!-- ngModel: Cuando se escribe un color, la propiedad cambia en el ts. 
+Cuando se cambia en el ts (con el botón), se cambia en el dom. -->

@@ -1,0 +1,15 @@
+hr {
+    border-bottom: 0.5px dotted cornflowerblue;
+}
+
+.text-warn {
+    color: orange;
+}
+
+.text-red {
+    color: red;
+}
+
+.text-success {
+    color: green;
+}

@@ -1,0 +1,50 @@
+<!-- ngIf -->
+<!-- <div *ngIf="isHombre==true">
+    <p>Hombre:</p>
+    <button (click)="mostrarHombreMujer(false)">Mostrar mujer</button>
+    <ul>
+        <li>Nombre: {{usuarioHombre.nombre}}</li>
+        <li>Edad: {{usuarioHombre.edad}}</li>
+        <li>Trabaja: {{usuarioHombre.trabaja}}</li>
+        <li>¿Mayor de edad?: {{usuarioHombre.isMayorDeEdad() ? 'Sí' : 'No'}}</li>
+    </ul>
+</div>
+
+<div *ngIf="isHombre==false">
+    <p>Mujer:</p>
+    <button (click)="mostrarHombreMujer(true)">Mostrar hombre</button>
+    <ul>
+        <li>Nombre: {{usuarioMujer.nombre}}</li>
+        <li>Edad: {{usuarioMujer.edad}}</li>
+        <li>Trabaja: {{usuarioMujer.trabaja}}</li>
+        <li *ngIf="usuarioMujer.isMayorDeEdad()">Mayor de edad.</li>
+        <li *ngIf="!usuarioMujer.isMayorDeEdad()">Menor de edad.</li>
+    </ul>
+</div> -->
+
+<!-- ngFor -->
+<h1>USUARIOS</h1>
+<ul>
+    <li *ngFor="let user of usuarios; let i = index"> <!-- Lo colocamos en el elemento que queremos repetir; Saca el index del ngFor!!! -->
+        <ul *ngIf="isHombre && user.sexo=='hombre'">
+            <h4>Usuario {{i+1}}</h4>
+            <li>{{user.nombre}}</li>
+            <li>{{user.edad}}</li>
+            <li>{{user.sexo}}</li>
+            <li *ngIf="user.trabaja">Trabaja</li>
+            <li *ngIf="user.isMayorDeEdad()">Mayor de edad.</li>
+            <li *ngIf="!user.isMayorDeEdad()">Menor de edad.</li>
+        </ul>
+        <ul *ngIf="!isHombre && user.sexo=='mujer'">
+            <h4>Usuario {{i+1}}</h4>
+            <li>{{user.nombre}}</li>
+            <li>{{user.edad}}</li>
+            <li>{{user.sexo}}</li>
+            <li *ngIf="user.trabaja">Trabaja</li>
+            <li *ngIf="user.isMayorDeEdad()">Mayor de edad.</li>
+            <li *ngIf="!user.isMayorDeEdad()">Menor de edad.</li>
+        </ul>
+     
+    </li>
+    <button (click)="mostrarHombreMujer()">Mostrar hombres/mujeres</button>
+</ul>

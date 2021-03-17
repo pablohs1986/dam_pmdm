@@ -1,0 +1,6 @@
+<app-navbar-llamadas></app-navbar-llamadas>
+<app-item-llamada 
+    *ngFor="let miLlamada of llamadas"
+    [llamada]="miLlamada"
+    [routerlink]="['/llamadas', miLlamada.codigoIncidencia]"
+    routerLinkActivated="active"></app-item-llamada>

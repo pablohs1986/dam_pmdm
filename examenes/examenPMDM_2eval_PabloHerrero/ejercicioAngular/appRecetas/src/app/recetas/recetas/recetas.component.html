@@ -1,0 +1,7 @@
+<app-nav-recetas></app-nav-recetas>
+<app-cabecera></app-cabecera>
+<app-receta *ngFor="let receta of recetas"
+[receta]="receta"
+[routerLink]="['/recetas',receta.cod]"
+routerLinkActive="active"></app-receta>
+
